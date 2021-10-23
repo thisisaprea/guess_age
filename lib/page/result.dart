@@ -10,7 +10,7 @@ class pageResult extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.withOpacity(0.3),
+        backgroundColor: Colors.deepPurple.withOpacity(0.3),
         title:  Text("GUESS TEACHER'S AGE"),
 
       ),

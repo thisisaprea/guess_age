@@ -108,6 +108,16 @@ class _Guess_AgeState extends State<Guess_Age> {
               ],
             ),
           ),
+          if(_isLoading)
+            Container(
+              color: Colors.black.withOpacity(0.5),
+              child: Center(
+                child: SizedBox(
+                    width: 100.0,
+                    height: 100.0,
+                    child: CircularProgressIndicator(color: Colors.white)),
+              ),
+            ),
         ],
       ),
     );
@@ -176,6 +186,9 @@ class _Guess_AgeState extends State<Guess_Age> {
 
   Future<dynamic> _loading(int y, int m) async {
     try {
+      setState(() {
+        _isLoading = true;
+      });
       var isLogin =
           (await Api().submit('guess_teacher_age', {'year': y, 'month': m}));
       print('Loading: $isLogin');
